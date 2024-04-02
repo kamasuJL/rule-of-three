@@ -1,4 +1,4 @@
-# RetailShare
+# Rule Of Three
 ​
 ## サイト概要
 ### サイトテーマ
