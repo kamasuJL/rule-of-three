@@ -1,5 +1,5 @@
 {
-  "name": "retail-share",
+  "name":"rule_of_three",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
