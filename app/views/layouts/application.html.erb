@@ -13,13 +13,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--CSS追加 -->
     <style type="text/css">
-    .jumbotron { 
-      background:url(<%= asset_path 'about.jpg' %>) center no-repeat; 
-      background-size: cover;
-    }
-    .container { color:#FFF;}
+    /*.jumbotron { */
+    /*  background:url(<%#= asset_path 'about.jpg' %>) center no-repeat; */
+    /*  background-size: cover;*/
+    /*}*/
+    /*.container { color:#FFF;}*/
     </style>
-    
+    <!--CSS追加ここまで-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -32,6 +32,9 @@
 
   <body class="d-flex flex-column vh-100">
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

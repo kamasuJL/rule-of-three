@@ -1,16 +1,85 @@
 <header class="shadow-sm">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <%= link_to root_path, class: "navbar-brand p-3" do %>
-        <%= image_tag('logo.png', width: '40%', height: '40%') %>
+      <!--サインイン者によってロゴの遷移先指定-->
+      <% if admin_signed_in? %>
+        <%= link_to admin_root_path, class: "navbar-brand p-3" do %>
+          <%= image_tag('logo.png', width: '40%', height: '40%') %>
+        <% end %>
+      <% else %>
+        <%= link_to root_path, class: "navbar-brand p-3" do %>
+          <%= image_tag('logo.png', width: '40%', height: '40%') %>
+        <% end %>
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li>新規登録</li>
-          <li>ログアウト</li>
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to about_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-circle-info"></i>About
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-user-group"></i>会員一覧(no_link)
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-layer-group"></i>グループ一覧(no_link)
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-file"></i>投稿一覧(no_link)
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-door-open"></i>ログアウト
+              <% end %>
+            </li>
+          <% elsif user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to about_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-circle-info"></i>About
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-house-user"></i>マイページ(no_link)
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-file"></i>投稿一覧(no_link)
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-door-open"></i>ログアウト
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to about_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-circle-info"></i>About
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_registration_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-user-plus"></i>新規登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_session_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-right-to-bracket"></i>ログイン
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
