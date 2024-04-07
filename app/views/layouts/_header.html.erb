@@ -1,7 +1,7 @@
 <header class="shadow-sm">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <!--サインイン者によってロゴの遷移先指定-->
+      <!--管理者ログイン時-->
       <% if admin_signed_in? %>
         <%= link_to admin_root_path, class: "navbar-brand p-3" do %>
           <%= image_tag('logo.png', width: '40%', height: '40%') %>
@@ -16,6 +16,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          <!--管理者ログイン時-->
           <% if admin_signed_in? %>
             <li class="nav-item">
               <%= link_to about_path,class: 'nav-link' do %>
@@ -42,6 +43,7 @@
                 <i class="fa-solid fa-door-open"></i>ログアウト
               <% end %>
             </li>
+          <!--ユーザーログイン時-->
           <% elsif user_signed_in? %>
             <li class="nav-item">
               <%= link_to about_path,class: 'nav-link' do %>
@@ -63,6 +65,7 @@
                 <i class="fa-solid fa-door-open"></i>ログアウト
               <% end %>
             </li>
+          <!--ユーザーログアウト時-->
           <% else %>
             <li class="nav-item">
               <%= link_to about_path,class: 'nav-link' do %>
