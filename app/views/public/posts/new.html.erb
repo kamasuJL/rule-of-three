@@ -3,7 +3,14 @@
   <h4>タイトル</h4>
   <%= f.text_field :title %>
   <h4>フェーズ</h4>
-  <%= f.text_field :phase %>
+  <%= f.radio_button :phase, Post.phases.key(0) %>
+  <%= f.label :phase_improvement, Post.phases_i18n[:improvement] %>
+  
+  <%= f.radio_button :phase, Post.phases.key(1) %>
+  <%= f.label :phase_development, Post.phases_i18n[:development] %>
+  
+  <%= f.radio_button :phase, Post.phases.key(2) %>
+  <%= f.label :phase_leaping, Post.phases_i18n[:leaping] %>
   <h4>本文</h4>
   <%= f.text_area :body %>
   <h4>方法</h4>

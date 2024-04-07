@@ -1,6 +1,4 @@
 <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.body %></div></td>
-    </tr>
+  <div><%= link_to post.title, post_path(post.id) %></div>
+  <duv><%= post.body %></div>
 <% end %>
