@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'homes#top'
+    resources :users, only: [:index, :show, :edit, :update]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
   end
   
   # 顧客用URL /users/sign_in ...
@@ -19,8 +21,20 @@ Rails.application.routes.draw do
   }
   
   scope module: :public do
+    # devise signup時のエラー解消
+    get "users" => redirect("/users/sign_up")
     root 'homes#top'
     get '/about' => 'homes#about'
+    
+    get 'mypage' => 'users#mypage'
+    namespace :users do 
+      resources only: [:edit, :show, :update, :destroy] do
+        get 'unsubscribe' => 'users#unsubscribe'
+        patch 'withdraw' => 'users#withdraw'
+      end
+    end
+    
+    resources :posts
   end
 
 end
