@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2024_04_07_103428) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.string "title", null: false
     t.integer "phase", null: false
     t.string "body", null: false
