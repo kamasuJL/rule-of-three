@@ -1,4 +1,6 @@
 class Public::PostsController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :update]
+  
   def new
     @post = Post.new
   end
@@ -15,10 +17,30 @@ class Public::PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @user = @post.user
   end
   
   def index
     @posts = Post.all
+  end
+  
+  def edit
+    @post = Post.find(params[:id])
+  end
+  
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render "edit"
+    end
+  end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
   
   private
@@ -26,4 +48,13 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :phase, :body, :way, :investment)
   end
+  
+  def ensure_correct_user
+    post = Post.find(params[:id])
+    user = post.user
+    unless user.id == current_user.id
+      redirect_to posts_path
+    end
+  end
+  
 end

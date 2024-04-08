@@ -1,0 +1,36 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <%= render 'layouts/error_messages', resource: @post %>
+      <h2>Post info</h2>
+      <%= form_with model:@post, local:true do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :数値成果を挙げた分野 %>
+          <%= f.text_field :title, class: "form-control name" %>
+        </div>
+        <div class="form-group">
+          <h4>自身で考える成果段階</h4>
+          <%= f.radio_button :phase, Post.phases.key(0) %>
+          <%= f.label :phase_improvement, Post.phases_i18n[:improvement] %>
+          
+          <%= f.radio_button :phase, Post.phases.key(1) %>
+          <%= f.label :phase_development, Post.phases_i18n[:development] %>
+          
+          <%= f.radio_button :phase, Post.phases.key(2) %>
+          <%= f.label :phase_leaping, Post.phases_i18n[:leaping] %>
+        </div>
+        <h4>成果の詳細</h4>
+        <%= f.text_area :body %>
+        <h4>具体的な手段</h4>
+        <%= f.text_field :way %>
+        <h4>頻度・投資時間量・継続期間</h4>
+        <%= f.text_area :investment %>
+    
+        <div class="form-group">
+          <%= f.submit "編集内容を保存する", class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

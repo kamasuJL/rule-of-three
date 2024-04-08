@@ -7,6 +7,10 @@ class Public::UsersController < ApplicationController
     @user = current_user
   end
   
+  def show
+    @user = User.find(params[:id])
+  end
+  
   def edit
     @user = current_user
   end

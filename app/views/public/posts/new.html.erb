@@ -1,12 +1,10 @@
 <h1>new.view</h1>
-<%= render 'public/shared/error_messages', resource: @post %>
+<%= render 'layouts/error_messages', resource: @post %>
 
 <%= form_with model: @post do |f| %>
-
-  
-  <h4>タイトル</h4>
+  <h4>数値成果を挙げた分野</h4>
   <%= f.text_field :title %>
-  <h4>フェーズ</h4>
+  <h4>自身で考える成果段階</h4>
   <%= f.radio_button :phase, Post.phases.key(0) %>
   <%= f.label :phase_improvement, Post.phases_i18n[:improvement] %>
   
@@ -15,11 +13,11 @@
   
   <%= f.radio_button :phase, Post.phases.key(2) %>
   <%= f.label :phase_leaping, Post.phases_i18n[:leaping] %>
-  <h4>本文</h4>
+  <h4>成果の詳細</h4>
   <%= f.text_area :body %>
-  <h4>方法</h4>
+  <h4>具体的な手段</h4>
   <%= f.text_field :way %>
-  <h4>投資時間</h4>
+  <h4>頻度・投資時間量・継続期間</h4>
   <%= f.text_area :investment %>
   
   <%= f.submit '投稿' %>
