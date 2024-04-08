@@ -1,0 +1,9 @@
+<h1>会員一覧</h1>
+<% @users.each do |user| %>
+  <%= link_to user.id, admin_user_path(user.id) %>
+  <% if user.is_active == true %>
+    <span class="text-success font-weight-bold align-middle">有効</span>
+  <% else %>
+    <span class="text-secondary font-weight-bold align-middle">退会</span>
+  <% end %>
+<% end %>

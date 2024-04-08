@@ -27,11 +27,16 @@ Rails.application.routes.draw do
     get '/about' => 'homes#about'
     
     get 'mypage' => 'users#mypage'
-    namespace :users do 
-      resources only: [:edit, :show, :update, :destroy] do
-        get 'unsubscribe' => 'users#unsubscribe'
-        patch 'withdraw' => 'users#withdraw'
-      end
+    
+    # namespace :users doにするとルーティングエラー
+    #   resources only: [:edit, :show, :update, :destroy] do
+    #     get 'unsubscribe' => 'users#unsubscribe'
+    #     patch 'withdraw' => 'users#withdraw'
+    #   end
+    # end
+    resources :users, only: [:edit, :show, :update, :destroy] do
+      get 'unsubscribe' => 'users#unsubscribe'
+      patch 'withdraw' => 'users#withdraw'
     end
     
     resources :posts
