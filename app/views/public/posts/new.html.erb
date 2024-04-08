@@ -1,5 +1,9 @@
 <h1>new.view</h1>
+<%= render 'public/shared/error_messages', resource: @post %>
+
 <%= form_with model: @post do |f| %>
+
+  
   <h4>タイトル</h4>
   <%= f.text_field :title %>
   <h4>フェーズ</h4>
