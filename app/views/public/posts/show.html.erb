@@ -6,5 +6,5 @@
 <p><%= @post.investment %></p>
 <% if current_user == @user %>
   <%= link_to "投稿内容の編集", edit_post_path(@post), class: "btn btn-success" %>
-  <%= link_to "投稿の削除", edit_post_path(@post), class: "btn btn-success" %>
+  <%= link_to "投稿の削除", @post, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger destroy_post_#{@post.id}" %>
 <% end %>
