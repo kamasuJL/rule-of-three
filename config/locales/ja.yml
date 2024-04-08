@@ -2,9 +2,9 @@
     enums:
       post:
         phase:
-          improvement: "改善"
-          development: "開発"
-          leaping: "飛躍"
+          improvement: "苦手を克服した"
+          development: "新たに挑戦した"
+          leaping: "強みを更に伸ばした"
     activerecord:
       errors:
         messages:
@@ -22,7 +22,7 @@
       - 金
       - 土
       abbr_month_names:
-      - 
+      -
       - 1月
       - 2月
       - 3月
@@ -48,7 +48,7 @@
         long: "%Y年%m月%d日(%a)"
         short: "%m/%d"
       month_names:
-      - 
+      -
       - 1月
       - 2月
       - 3月
