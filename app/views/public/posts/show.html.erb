@@ -1,10 +1,37 @@
-<h2>post.show.page</h2>
-<p><%= @post.title %></p>
-<p><%= @post.body %></p>
-<p><%= @post.phase_i18n %></p>
-<p><%= @post.way %></p>
-<p><%= @post.investment %></p>
-<% if current_user == @user %>
-  <%= link_to "投稿内容の編集", edit_post_path(@post), class: "btn btn-primary" %>
-  <%= link_to "投稿の削除", @post, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger destroy_post_#{@post.id}" %>
-<% end %>
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <h2 class="font-weight-bold mb-4">投稿詳細</h2>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title"><%= @post.title %></h2>
+          
+          <div class="card-text">
+            <label for="post_body">⚫︎投稿内容</label>
+            <p><%= @post.body %></p>
+          </div>
+          
+          <div class="card-text">
+            <label for="post_phase">⚫︎成果段階</label>
+            <p><%= @post.phase_i18n %></p>
+          </div>
+          
+          <div class="card-text">
+            <label for="post_way">⚫︎具体的な手段</label>
+            <p><%= @post.way %></p>
+          </div>
+          
+          <div class="card-text">
+            <label for="post_investment">⚫︎頻度・投資時間量・継続期間</label>
+            <p><%= @post.investment %></p>
+          </div>
+          
+          <% if current_user == @user %>
+            <%= link_to "投稿内容の編集", edit_post_path(@post), class: "btn btn-primary mr-2" %>
+            <%= link_to "投稿の削除", @post, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
