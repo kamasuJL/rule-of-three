@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :is_matching_login_user, only: [:unsubscribe, :withdraw]
   
   def mypage
     @posts = current_user.posts
@@ -43,7 +44,14 @@ class Public::UsersController < ApplicationController
   def ensure_correct_user
     @user = User.find(params[:id])
     unless @user == current_user
-      redirect_to mypage_path(current_user)
+      redirect_to root_path, alert: "Access denied."
+    end
+  end
+  
+  def is_matching_login_user
+    user = User.find_by(id: params[:user_id])
+    unless user && user.id == current_user.id
+      redirect_to root_path, alert: "Access denied."
     end
   end
   

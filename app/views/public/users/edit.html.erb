@@ -1,6 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-lg-5 px-5 px-sm-0 mx-auto">
       <%= render 'layouts/error_messages', resource: @user %>
       <h2>User info</h2>
       <%= form_with model:@user, local:true do |f| %>
@@ -22,3 +22,5 @@
     </div>
   </div>
 </div>
+
+<%#= javascript_pack_tag 'user_edit' %>
