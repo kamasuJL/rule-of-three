@@ -41,5 +41,7 @@ Rails.application.routes.draw do
     
     resources :posts
   end
+  
+  get '/favicon.ico', to: proc { [204, {}, []] }
 
 end
