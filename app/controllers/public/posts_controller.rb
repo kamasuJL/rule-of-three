@@ -53,7 +53,7 @@ class Public::PostsController < ApplicationController
     post = Post.find(params[:id])
     user = post.user
     unless user.id == current_user.id
-      redirect_to posts_path
+      redirect_to posts_path, alert: "Access denied."
     end
   end
   
