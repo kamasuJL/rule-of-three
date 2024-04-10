@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:top]
   before_action :ensure_correct_user, only: [:edit, :update]
   before_action :is_matching_login_user, only: [:unsubscribe, :withdraw]
   
@@ -19,7 +19,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to mypage_path(@user)
+      redirect_to user_path(@user)
     else
       render "edit"
     end

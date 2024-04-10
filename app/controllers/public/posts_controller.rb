@@ -1,4 +1,5 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:top]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def new
@@ -53,7 +54,7 @@ class Public::PostsController < ApplicationController
     post = Post.find(params[:id])
     user = post.user
     unless user.id == current_user.id
-      redirect_to posts_path
+      redirect_to posts_path, alert: "Access denied."
     end
   end
   
