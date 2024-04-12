@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:top]
+  # before_action :authenticate_user!, except: [:top]
+  before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
   before_action :is_matching_login_user, only: [:unsubscribe, :withdraw]
   
@@ -11,6 +12,11 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+  
+  def index
+    @users = User.all
+  end
+  
   
   def edit
     @user = current_user

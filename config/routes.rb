@@ -22,19 +22,18 @@ Rails.application.routes.draw do
   
   scope module: :public do
     # devise signup時のエラー解消
-    get "users" => redirect("/users/sign_up")
+    # get "users" => redirect("/users/sign_up")
     root 'homes#top'
     get '/about' => 'homes#about'
-    
     get 'mypage' => 'users#mypage'
-    
+    get '/search' => 'searches#search'
     # namespace :users doにするとルーティングエラー
     #   resources only: [:edit, :show, :update, :destroy] do
     #     get 'unsubscribe' => 'users#unsubscribe'
     #     patch 'withdraw' => 'users#withdraw'
     #   end
     # end
-    resources :users, only: [:edit, :show, :update, :destroy] do
+    resources :users, only: [:edit, :show, :update, :destroy, :index] do
       get 'unsubscribe' => 'users#unsubscribe'
       patch 'withdraw' => 'users#withdraw'
     end
