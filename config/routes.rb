@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   scope module: :public do
     # devise signup時のエラー解消
-    get "users" => redirect("/users/sign_up")
+    # get "users" => redirect("/users/sign_up")
     root 'homes#top'
     get '/about' => 'homes#about'
     get 'mypage' => 'users#mypage'
