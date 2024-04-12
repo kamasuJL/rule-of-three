@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
+  
+  has_many :comments, dependent: :destroy
+  
   enum phase: { improvement: 0, development: 1, leaping: 2 }
   
   validates :title, presence: true
