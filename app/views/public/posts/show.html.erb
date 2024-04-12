@@ -30,6 +30,9 @@
             <%= link_to "投稿内容の編集", edit_post_path(@post), class: "btn btn-primary mr-2" %>
             <%= link_to "投稿の削除", @post, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
           <% end %>
+          
+          <%= render "public/comments/index", post: @post %>
+          <%= render "public/comments/form", post: @post, comment: @comment %>
         </div>
       </div>
     </div>
