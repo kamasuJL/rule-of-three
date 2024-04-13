@@ -8,7 +8,7 @@
     <div><%= comment.comment %></div>
     <div>
       <% if comment.user == current_user %>
-        <%= link_to "Destroy", comment_path(comment), method: :delete, class: "btn btn-danger" %>
+        <%= link_to "Destroy", comment_path(comment), method: :delete, class: "btn btn-danger", remote: true %>
       <% end %>
     </div>
   <% end %>

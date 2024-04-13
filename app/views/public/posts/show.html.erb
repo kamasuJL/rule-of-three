@@ -28,7 +28,7 @@
           
           <div class="card-text">
             <label for="post_comment">⚫コメント数</label>
-            <p><%= @post.comments.count %></p>
+            <p><%= render "public/comments/counter", post: @post %></p>
           </div>
           
           <% if current_user == @user %>
