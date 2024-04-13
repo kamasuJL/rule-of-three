@@ -3,6 +3,17 @@
   // background-color: #dcdcdc; /* ホバー時の背景色を灰色に変更 */
   // color: grey; /* ホバー時のテキスト色を白色に変更 */
   // border: 1px solid #dcdcdc;
+  
+  .btn-primary:hover {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  background: #00BFFF;
+  border-color: #00BFFF;
+  border-radius: 6px;
+  transition: .3s;
+  transform: scale(1.05);
+}
   .btn-secondary:hover {
   color: #fff;
   font-size: 16px;
@@ -25,12 +36,12 @@
   transform: scale(1.05);
 }
 
-.btn-primary:hover {
+.btn-info:hover {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  background: #00BFFF;
-  border-color: #00BFFF;
+  background: #008080;
+  border-color: #008080;
   border-radius: 6px;
   transition: .3s;
   transform: scale(1.05);
