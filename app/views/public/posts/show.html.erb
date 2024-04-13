@@ -27,8 +27,8 @@
           </div>
           
           <div class="card-text">
-            <label for="post_comment">⚫コメント数</label>
-            <p><%= render "public/comments/counter", post: @post %></p>
+            <label for="comments-count">⚫コメント数</label>
+            <p><%= render "public/comments/count", post: @post %></p>
           </div>
           
           <% if current_user == @user %>
@@ -36,8 +36,12 @@
             <%= link_to "投稿の削除", @post, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
           <% end %>
           
-          <%= render "public/comments/index", post: @post %>
-          <%= render "public/comments/form", post: @post, comment: @comment %>
+          <div class="comments-index">
+            <%= render "public/comments/index", post: @post %>
+          </div>
+          <div>
+            <%= render "public/comments/form", post: @post, comment: @comment %>
+          </div>
         </div>
       </div>
     </div>
