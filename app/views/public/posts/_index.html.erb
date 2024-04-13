@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row mb-4">
     <div class="col-md-12">
-      <h2 class="font-weight-bold mb-4">投稿一覧</h2>
       <% posts.each do |post| %>
         <div class="row">
           <div class="col-md-2">
@@ -25,6 +24,13 @@
           </div>
           <div class="col-md-7">
             <p><%= post.body %></p>
+          </div>
+          
+          <div class="col-md-2">
+            <label>コメント数</label>
+          </div>
+          <div class="comments-count col-md-2">
+            <p><%= render "public/comments/count", post: post %></p>
           </div>
         </div>
         <hr class="mt-1">

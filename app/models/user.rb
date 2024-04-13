@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_one_attached :image
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   validates :name, presence: true, length: { in: 1..9 }
   
