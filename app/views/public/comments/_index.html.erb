@@ -1,15 +1,18 @@
-<div class="row">
+
   <% post.comments.each do |comment| %>
-    <div>
+  <div class="row mb-1 ">
+    <div class="col-md-3">
       <%= link_to user_path(comment.user) do %>
         <%= comment.user.name %>
       <% end %>
     </div>
-    <div><%= comment.comment %></div>
-    <div>
+    <div class="col-md-3">
+      <%= comment.comment %>
+    </div>
+    <div class="col-md-3">
       <% if comment.user == current_user %>
-        <%= link_to "Destroy", comment_path(comment), method: :delete, class: "btn btn-danger", remote: true %>
+        <%= link_to "Destroy", comment_path(comment), method: :delete, class: "btn btn-danger btn-sm", remote: true %>
       <% end %>
     </div>
+    </div>
   <% end %>
-</div>
