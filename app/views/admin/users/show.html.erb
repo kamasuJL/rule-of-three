@@ -1,9 +1,43 @@
-<h1>admin.user.show</h1>
-<%= @user.name %>
-<%= @user.email %>
-<% if @user.is_active == true %>
-  <span class="text-success font-weight-bold align-middle">有効</span>
-<% else %>
-  <span class="text-secondary font-weight-bold align-middle">退会</span>
-<% end %>
-<%= link_to "会員情報の編集", edit_admin_user_path(@user.id), class: "btn btn-success" %>
+<div class="container mt-3 ms-5">
+  <div class="row">
+    <h4 class="text-black"><%= @user.name %>さんの会員詳細</h4>
+  </div>
+  
+  
+  <div class="row form-group justify-content-center mt-5">
+    <div class="col-sm-3">
+      <span>会員ID</span>
+    </div>
+    <div class="col-sm-7">
+      <%= @user.id %>
+    </div>
+  </div>
+  
+  <div class="row form-group justify-content-center">
+    <div class="col-sm-3">
+      <span>メールアドレス</span>
+    </div>
+    <div class="col-sm-7">
+      <%= @user.email %>
+    </div>
+  </div>
+  
+  <div class="row form-group justify-content-center">
+    <div class="col-sm-3 mb-3">
+      <span>会員ステータス</span>
+    </div>
+    <div class="col-sm-7">
+      <% if @user.is_active == true %>
+        <span class="text-success font-weight-bold align-middle">有効</span>
+      <% else %>
+        <span class="text-secondary font-weight-bold align-middle">退会</span>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="row text-center mb-5 ms-10">
+    <div class = "offset-1 text-center">
+      <%= link_to "会員情報の編集", edit_admin_user_path(@user.id), class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
