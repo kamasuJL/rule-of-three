@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     # get "users" => redirect("/users/sign_up")
     root 'homes#top'
     get '/about' => 'homes#about'
-    get 'mypage' => 'users#mypage'
+    get 'mypage/' => 'users#mypage'
     get '/search' => 'searches#search'
     # namespace :users doにするとルーティングエラー
     #   resources only: [:edit, :show, :update, :destroy] do
