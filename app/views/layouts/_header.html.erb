@@ -40,6 +40,11 @@
               <% end %>
             </li>
             <li class="nav-item">
+              <%= link_to admin_comments_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-file"></i>コメント一覧
+              <% end %>
+            </li>
+            <li class="nav-item">
               <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
                 <i class="fa-solid fa-door-open"></i>ログアウト
               <% end %>

@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'homes#top'
     resources :users, only: [:index, :show, :edit, :update]
-    resources :posts, only: [:index, :show, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy] do
+      # resources :comments, only: [:index]
+    end
+    resources :comments, only: [:index, :destroy]
   end
   
   # 顧客用URL /users/sign_in ...
