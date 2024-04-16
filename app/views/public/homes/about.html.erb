@@ -1,19 +1,15 @@
-<div class="container">
-  <div class="jumbotron jumbotron-fluid text-white" style="background: url(<%= asset_path "about.jpg" %>) center no-repeat; background-size: cover;">
-    
-    <!--/*.container { color:#FFF;}*/-->
-    
-    <div class="mx-auto" style="width: 575px;">
-      <h1>Rule Of Threeについて</h1>
-    </div>
-    <div class="mx-auto" style="width: 575px;">
-      <p class="col-sm-10 col-md-10">
+<div class="hero-section">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Welcome to Rule Of Three</h1>
+        <p class="col-sm-10 col-md-10 mx-auto">
         当サイトは、成功体験を投稿・共有できるサイトです。<br>
         年代を問わずご利用いただけます。<br>
         コミュニティサイトですのでグループも作成いただけます。<br>
         ぜひご活用ください。
-      </p>
+        </p>
+        <div class="about-btn">
+          <%= link_to "Learn More", about_path %>
+        </div>
     </div>
- 
-  </div>
 </div>
