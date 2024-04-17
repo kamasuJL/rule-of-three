@@ -3,6 +3,7 @@ class Public::GroupsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   
   def new
+    @group = Group.new
   end
   
   def create
