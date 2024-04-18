@@ -12,7 +12,12 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 1..9 }
   
   def self.search_for(content)
+    if content.present?
       User.where('name LIKE ?', '%' + content + '%')
+    else
+      User.none
+      # 空のActiveRecordリレーションを返すことで、空欄の場合に何も表示しないようにする
+    end
   end
 
 end
