@@ -34,10 +34,7 @@ class Public::GroupsController < ApplicationController
       render "edit"
     end
   end
-  
-  def destroy
-  end
-  
+
   private
   
   def group_params
