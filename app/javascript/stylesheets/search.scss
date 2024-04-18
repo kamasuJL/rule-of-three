@@ -1,8 +1,8 @@
 input#search-bar{
-  margin: 0 auto;
-  width: 100%;
-  height: 45px;
-  padding: 0 20px;
+  margin: 0;
+  width: 300px;
+  height: 35px;
+  padding: 0 15px;
   font-size: 1rem;
   border: 1px solid #D0CFCE;
   outline: none;
@@ -24,6 +24,13 @@ input#search-bar{
      }    
    }
  }
+ 
+.select-box {
+  height: 35px;
+  margin-right: 4px;
+  border: 1px solid #D0CFCE;
+  outline: none;
+ }
 
 .search-icon-button {
   background-color: transparent;
@@ -31,8 +38,6 @@ input#search-bar{
   padding: 0;
   position: relative;
   float: right;
-  width: 75px;
-  height: 75px;
-  top: -62px;
-  right: -15px;
+  width: 40px;
+  top: -30px;
 }
