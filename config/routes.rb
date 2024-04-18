@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       # resources :comments, only: [:index]
     end
     resources :comments, only: [:index, :destroy]
+    resources :groups, only: [:index, :destroy]
   end
   
   # 顧客用URL /users/sign_in ...
