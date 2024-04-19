@@ -1,9 +1,9 @@
-.hero-section {
+.section {
     position: relative;
-    background: url("/assets/about.jpg");
+    background: url("/assets/top3.jpg");
     background-size: cover;
     background-position: center;
-    height: 500px; /* 適切な高さに調整してください */
+    height: 500px;
 }
 
 .overlay {
@@ -15,42 +15,25 @@
     background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
 }
 
-.content {
+.about-content {
     position: relative;
     z-index: 1; /* コンテンツをオーバーレイの上に配置 */
     color: white; /* テキストの色を白に設定 */
-    text-align: center;
+    text-align: left;
     padding: 50px;
 }
 
-h1 {
-    font-size: 36px;
+.about-title {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 70px;
+  font-style: normal;
+  margin-bottom: 50px;
 }
 
-p {
-    font-size: 18px;
+.about-list {
+    font-size: 25px;
+    font-weight:  bolder;
+    padding-top: 40px;
 }
 
-.about-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: transparent;
-  border-style: solid; /* 追加 */
-  border-color: #FF5733;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.about-btn a {
-  color: white;
-}
-
-.about-btn a:hover {
-  text-decoration: none;
-}
-
-.about-btn:hover {
-    background-color: #FF5733; /* ホバー時の背景色 */
-}

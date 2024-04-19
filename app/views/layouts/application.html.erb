@@ -6,26 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--CDNここまで-->
     <title>RuleOfThree</title>
-    <!--CSS -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
     <!--JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!--CSS追加 -->
-    <style type="text/css">
-    /*.jumbotron { */
-    /*  background:url(<%#= asset_path 'about.jpg' %>) center no-repeat; */
-    /*  background-size: cover;*/
-    /*}*/
-    /*.container { color:#FFF;}*/
-    </style>
-    <!--CSS追加ここまで-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!--Font Awesome記述-->
     <script src="https://kit.fontawesome.com/17b246e958.js" crossorigin="anonymous"></script>
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -34,8 +22,10 @@
     <%= render 'layouts/header' %>
     <main>
       <%# deivseのフラッシュメッセージを表示 %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice.present? || alert.present? %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
