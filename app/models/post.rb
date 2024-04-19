@@ -11,15 +11,12 @@ class Post < ApplicationRecord
   validates :way, presence: true
   validates :investment, presence: true
   
-  def self.search_for(content, method)
-    if method == 'perfect'
-      Post.where(title: content)
-    elsif method == 'forward'
-      Post.where('title LIKE ?', content+'%')
-    elsif method == 'backward'
-      Post.where('title LIKE ?', '%'+content)
-    else
+  def self.search_for(content)
+    if content.present?
       Post.where('title LIKE ?', '%'+content+'%')
+    else
+      Post.none
+      # 空のActiveRecordリレーションを返すことで、空欄の場合に何も表示しないようにする
     end
   end
   

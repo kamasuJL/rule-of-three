@@ -1,96 +1,101 @@
 <header class="shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light displaycol">
+    <div class="navbar-brand p-1">
       <!--管理者ログイン時-->
       <% if admin_signed_in? %>
-        <%= link_to admin_root_path, class: "navbar-brand p-3" do %>
+        <%= link_to admin_root_path, class: "navbar-brand" do %>
           <%= image_tag('logo.png', width: '180', height: '80') %>
         <% end %>
       <% else %>
-        <%= link_to root_path, class: "navbar-brand p-3" do %>
+        <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag('logo.png', width: '180', height: '80') %>
         <% end %>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse flex-column" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-1">
+        <!--管理者ログイン時-->
+        <% if admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to about_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-circle-info"></i>About
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_users_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-user-group"></i>会員一覧
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_groups_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-layer-group"></i>グループ一覧
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_posts_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-file"></i>投稿一覧
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_comments_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-file"></i>コメント一覧
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
+              <i class="fa-solid fa-door-open"></i>ログアウト
+            <% end %>
+          </li>
+        <!--ユーザーログイン時-->
+        <% elsif user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to about_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-circle-info"></i>About
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to mypage_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-house-user"></i>マイページ
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to posts_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-file"></i>投稿一覧
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+              <i class="fa-solid fa-door-open"></i>ログアウト
+            <% end %>
+          </li>
+        <!--ユーザーログアウト時-->
+        <% else %>
+          <li class="nav-item">
+            <%= link_to about_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-circle-info"></i>About
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_user_registration_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-user-plus"></i>新規登録
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_user_session_path,class: 'nav-link' do %>
+              <i class="fa-solid fa-right-to-bracket"></i>ログイン
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
       
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <!--管理者ログイン時-->
-          <% if admin_signed_in? %>
-            <li class="nav-item">
-              <%= link_to about_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-circle-info"></i>About
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_users_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-user-group"></i>会員一覧
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_user_session_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-layer-group"></i>グループ一覧(no_link)
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_posts_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-file"></i>投稿一覧
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_comments_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-file"></i>コメント一覧
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link' do %>
-                <i class="fa-solid fa-door-open"></i>ログアウト
-              <% end %>
-            </li>
-          <!--ユーザーログイン時-->
-          <% elsif user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to about_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-circle-info"></i>About
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to mypage_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-house-user"></i>マイページ
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to posts_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-file"></i>投稿一覧
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                <i class="fa-solid fa-door-open"></i>ログアウト
-              <% end %>
-            </li>
-          <!--ユーザーログアウト時-->
-          <% else %>
-            <li class="nav-item">
-              <%= link_to about_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-circle-info"></i>About
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_user_registration_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-user-plus"></i>新規登録
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_user_session_path,class: 'nav-link' do %>
-                <i class="fa-solid fa-right-to-bracket"></i>ログイン
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+      <div class="search-box ml-auto">
+        <%= render 'public/searches/form' %>
       </div>
+      
     </div>
   </nav>
 </header>
