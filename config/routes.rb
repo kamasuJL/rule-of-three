@@ -50,7 +50,10 @@ Rails.application.routes.draw do
       resource :group_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]
       get "event_notices" => "event_notices#sent"
+      resource :permits, only: [:create, :destroy]
     end
+    
+    get "groups/:id/permits" => "groups#permits", as: :permits
     
   end
 
