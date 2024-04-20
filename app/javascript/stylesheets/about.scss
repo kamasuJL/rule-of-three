@@ -28,11 +28,12 @@ ol {
 }
 
 .about-title {
-  font-family: "Rubik", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-size: 70px;
+  font-weight: 600;
   font-style: normal;
-  margin-bottom: 50px;
+  height: 100px;
+  font-size: 50px;
 }
 
 
@@ -40,7 +41,7 @@ ol {
     height: 300px;
 }
 
-.about-01 {
+.about-list {
  border-top: 3px solid white;
  border-right: 3px solid white;
  border-bottom: 3px solid white;
@@ -48,7 +49,7 @@ ol {
  border-radius: 50%;
 }
 
-.about-01-title {
+.about-list-title {
     margin-top: 3px;
     margin-left: 70px;
 }
