@@ -1,42 +1,69 @@
-.hero-section {
-    position: relative;
-    background: url("/assets/about.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.swiper-slide img {
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+    width: 100%;
+    object-fit: cover; 
 }
 
-.content {
-    position: relative;
-    z-index: 1; /* コンテンツをオーバーレイの上に配置 */
-    color: white; /* テキストの色を白に設定 */
-    text-align: center;
-    padding: 50px;
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-h1 {
-    font-size: 36px;
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+
+    .swiper-wrapper {
+
+        .swiper-slide {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            
+            p {
+                position: absolute;
+                top: 40%;
+                left: 10%;
+                color: #ffffff;
+                font-size: 2.5vw;
+                font-weight: bold;
+                font-family: "Noto Sans Japanese";
+            }
+        }
+
+        .swiper-slide-active {
+
+            p {
+                animation-name: fade-in;
+                animation-duration: 2s;
+                animation-delay: 2s;
+                animation-fill-mode: both;
+            }
+
+        }
+    }
 }
 
-p {
-    font-size: 18px;
+
+.btn-section {
+  background-color: #2F4F4F; 
 }
 
 .about-btn {
   display: inline-block;
-  padding: 10px 20px;
+  margin: 1px 20px; 
+  padding: 10px 30px;
   background-color: transparent;
-  border-style: solid; /* 追加 */
-  border-color: #FF5733;
+  border-style: solid; 
+  border-color: white;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -52,15 +79,5 @@ p {
 }
 
 .about-btn:hover {
-    background-color: #FF5733; /* ホバー時の背景色 */
-}
- 
-.top-title {
-    font-family: "Noto Sans Japanese";
-    font-weight:  bolder;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: auto; /* 画像のアスペクト比を保持するため */
+    background-color: #5a9999; 
 }

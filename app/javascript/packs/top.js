@@ -1,18 +1,22 @@
+/*global Swiper*/
+
 const swiper = new Swiper(".swiper", {
-  loop: true, // ループ
-  speed: 1500, // 少しゆっくり(デフォルトは300)
-  autoplay: { // 自動再生
-    delay: 1000, // 1秒後に次のスライド
-    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+  loop: true, 
+  speed: 1500, 
+  autoplay: { 
+    delay: 8000, 
+    disableOnInteraction: false, 
   },
-  // ページネーション
+
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // 前後の矢印
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
+
+swiper.el.style.height = "400px";
