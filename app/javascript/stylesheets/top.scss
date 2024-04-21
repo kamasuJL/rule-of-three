@@ -54,11 +54,13 @@ p {
 .about-btn:hover {
     background-color: #FF5733; /* ホバー時の背景色 */
 }
-
-
-@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
  
 .top-title {
     font-family: "Noto Sans Japanese";
     font-weight:  bolder;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto; /* 画像のアスペクト比を保持するため */
 }
