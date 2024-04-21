@@ -1,67 +1,36 @@
-<div class="container">
-  <div class="row mt-4 justify-content-center">
-    <span class="text-center font-weight-bold">
-      成果を共有し、成功体験を広めるコミュニティサイト<br>
-      目標達成に悩む人や人生の転換期を迎える人を対象に<br>
-      効果的な目標達成をサポートする場を提供。<br>
-      仕事や趣味での成果不足や新しいスキル習得の際に活用可能
-    </span>
-  </div>
-</div>
-
-<div class="col-sm-12 col-md-12 col-lg-12 px-5 px-sm-0 mx-auto align-self-center text-start" style="margin-top: 50px; margin-bottom: 50px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-12">
-        <table class="table table-hover table-inverse">
-          
-          
-          <style>
-        
-          .slider {
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            overflow: hidden;
-            margin: 0 auto;
-          }
-
-          .slider > :first-child {
-            animation: scroll 30s infinite linear;
-          }
-      
-          @keyframes scroll {
-            0% { margin-left: 0; }
-            20% { margin-left: -100%; }
-            50% { margin-left: -200%; }
-            70% { margin-left: -300%; }
-            100% { margin-left: -400%; }
-          }
-        </style>
-        
-        <body>
-          <div class="slider">
-            <div class="slider-item">
-              <%= image_tag 'top1.jpg', style: "width: 1200px; height: 800px;" %>
-            </div>
-             
-            <div class="slider-item">
-              <%= image_tag 'top2.jpg', style: "width: 1200px; height: 800px;" %>
-            </div>
-             
-            <div class="slider-item">
-              <%= image_tag 'top2.jpg', style: "width: 1200px; height: 800px;" %>
-            </div>
-            
-            <div class="slider-item">
-              <%= image_tag 'top4.jpg', style: "width: 1200px; height: 800px;" %>
-            </div>
-            
-          </div>
-        </body>
-        
-       </table>
-      </div>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <%= image_tag asset_path('top1.jpg'), alt: '' %>
+      <p class="slide-text">Welcome to Rule Of Three</p>
+    </div>
+                    
+    <div class="swiper-slide">
+      <%= image_tag asset_path('top2.jpg'), alt: '' %>
+      <p class="slide-text">当サイトは、成功体験を投稿・共有できるサイトです<br>
+        年代を問わずご利用いただけます</p>
+    </div>
+    <div class="swiper-slide">
+      <%= image_tag asset_path('top3.jpg'), alt: '' %>
+      <p class="slide-text">仕事や趣味での成果不足や新しいスキル習得の際に<br>
+        ぜひご活用ください</p>
     </div>
   </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
+
+<div class="btn-section p-1 d-flex justify-content-center">
+  <div class="about-btn">
+    <%= link_to "About", about_path %>
+  </div>
+  <div class="about-btn">
+    <%= link_to "会員登録", new_user_registration_path %>
+  </div>
+  <div class="about-btn">
+    <%= link_to "ログイン", new_user_session_path %>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'top', 'data-turbolinks-track': 'reload' %>

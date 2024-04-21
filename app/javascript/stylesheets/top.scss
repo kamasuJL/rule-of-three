@@ -1,0 +1,83 @@
+.swiper-slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+
+    .swiper-wrapper {
+
+        .swiper-slide {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            
+            p {
+                position: absolute;
+                top: 40%;
+                left: 10%;
+                color: #ffffff;
+                font-size: 2.5vw;
+                font-weight: bold;
+                font-family: "Noto Sans Japanese";
+            }
+        }
+
+        .swiper-slide-active {
+
+            p {
+                animation-name: fade-in;
+                animation-duration: 2s;
+                animation-delay: 2s;
+                animation-fill-mode: both;
+            }
+
+        }
+    }
+}
+
+
+.btn-section {
+  background-color: #2F4F4F; 
+}
+
+.about-btn {
+  display: inline-block;
+  margin: 1px 20px; 
+  padding: 10px 30px;
+  background-color: transparent;
+  border-style: solid; 
+  border-color: white;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.about-btn a {
+  color: white;
+}
+
+.about-btn a:hover {
+  text-decoration: none;
+}
+
+.about-btn:hover {
+    background-color: #5a9999; 
+}

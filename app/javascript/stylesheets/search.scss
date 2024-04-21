@@ -41,3 +41,21 @@ input#search-bar{
   width: 40px;
   top: -30px;
 }
+
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column; 
+  }
+
+  .search-icon-button {
+    align-self: flex-start; 
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+
+  .select-box {
+    width: 100%;
+    align-self: flex-end; 
+    margin-right: 4px;
+  }
+}

@@ -15,6 +15,7 @@ import "../stylesheets/application";
 import "../stylesheets/button"; 
 import "../stylesheets/about"; 
 import "../stylesheets/search"; 
+import "../stylesheets/top"; 
 
 Rails.start()
 Turbolinks.start()

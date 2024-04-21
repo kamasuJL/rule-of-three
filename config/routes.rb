@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'homes#top'
     resources :users, only: [:index, :show, :edit, :update]
-    resources :posts, only: [:index, :show, :edit, :update, :destroy] do
-      # resources :comments, only: [:index]
-    end
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
     resources :comments, only: [:index, :destroy]
     resources :groups, only: [:index, :destroy]
   end
+  
   
   # 顧客用URL /users/sign_in ...
   devise_for :users,skip: [:passwords], controllers: {
@@ -31,12 +30,7 @@ Rails.application.routes.draw do
     get '/about' => 'homes#about'
     get 'mypage/' => 'users#mypage'
     get '/search' => 'searches#search'
-    # namespace :users doにするとルーティングエラー
-    #   resources only: [:edit, :show, :update, :destroy] do
-    #     get 'unsubscribe' => 'users#unsubscribe'
-    #     patch 'withdraw' => 'users#withdraw'
-    #   end
-    # end
+    
     resources :users, only: [:edit, :show, :update, :destroy, :index] do
       get 'unsubscribe' => 'users#unsubscribe'
       patch 'withdraw' => 'users#withdraw'
@@ -45,6 +39,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments, only: [:create]
     end
+    
     resources :comments, only: [:destroy]
     resources :groups, only: [:new, :index, :show, :create, :edit, :update] do
       resource :group_users, only: [:create, :destroy]
@@ -56,5 +51,4 @@ Rails.application.routes.draw do
     get "groups/:id/permits" => "groups#permits", as: :permits
     
   end
-
 end
