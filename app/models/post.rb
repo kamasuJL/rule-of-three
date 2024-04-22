@@ -11,12 +11,6 @@ class Post < ApplicationRecord
   validates :way, presence: true
   validates :investment, presence: true
 
-  # validates :title, presence: { message: "タイトルを入力してください" }
-  # validates :phase, presence: { message: "Phaseを入力してください" }
-  # validates :body, presence: { message: "Bodyを入力してください" }
-  # validates :way, presence: { message: "Wayを入力してください" }
-  # validates :investment, presence: { message: "Investmentを入力してください" }
-
   def self.search_for(content)
     if content.present?
       Post.where('title LIKE ?', '%'+content+'%')
