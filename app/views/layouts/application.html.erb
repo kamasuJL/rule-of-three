@@ -23,8 +23,8 @@
   <body class="d-flex flex-column vh-100">
     <%= render 'layouts/header' %>
     <main>
-      <% deivseのフラッシュメッセージを表示 %>
-      <%#if notice.present? || alert.present? %>
+      <%# deivseのフラッシュメッセージを表示 %>
+      <%if notice.present? || alert.present? %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       <% end %>
