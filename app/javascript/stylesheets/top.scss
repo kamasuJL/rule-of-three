@@ -54,7 +54,7 @@
 
 
 .btn-section {
-  background-color: #2F4F4F; 
+  background-color: #324851; 
 }
 
 .about-btn {
@@ -80,4 +80,15 @@
 
 .about-btn:hover {
     background-color: #5a9999; 
+}
+
+.top-img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.top-card-img {
+  object-fit: cover;
+  height: 200px; 
 }
