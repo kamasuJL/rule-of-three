@@ -1,9 +1,3 @@
-/* ボタンのホバー時のスタイル */
-// input[type="submit"]:hover {
-  // background-color: #dcdcdc; /* ホバー時の背景色を灰色に変更 */
-  // color: grey; /* ホバー時のテキスト色を白色に変更 */
-  // border: 1px solid #dcdcdc;
-  
   .btn-primary:hover {
   color: #fff;
   font-size: 16px;
@@ -33,7 +27,7 @@
   border-color: #DB7093;
   border-radius: 6px;
   transition: .3s;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .btn-info:hover {

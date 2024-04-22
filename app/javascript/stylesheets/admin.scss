@@ -1,0 +1,15 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px; 
+}
+
+.img-no-image {
+  object-fit: cover; 
+  height: 200px;
+}
