@@ -7,11 +7,29 @@
           leaping: "強みを更に伸ばした"
     activerecord:
       errors:
+        models:
+          post: "投稿"
+        attributes:
+          post:
+            title:
+              blank: "タイトルを入力してください"
+            phase:
+              blank: "Phaseを入力してください"
+            body:
+              blank: "Bodyを入力してください"
+            way:
+              blank: "Wayを入力してください"
+            investment:
+              blank: "Investmentを入力してください"
         messages:
-          record_invalid: 'バリデーションに失敗しました: %{errors}'
-          restrict_dependent_destroy:
-            has_one: "%{record}が存在しているので削除できません"
-            has_many: "%{record}が存在しているので削除できません"
+          record_invalid: "%{record}は保存されませんでした: %{errors}"
+        # errors:
+      #   messages:
+      #     record_invalid: 'バリデーションに失敗しました: %{errors}'
+      #     restrict_dependent_destroy:
+      #       has_one: "%{record}が存在しているので削除できません"
+      #       has_many: "%{record}が存在しているので削除できません"
+
     date:
       abbr_day_names:
       - 日
