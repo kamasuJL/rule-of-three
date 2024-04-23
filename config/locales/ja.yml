@@ -7,11 +7,20 @@
           leaping: "強みを更に伸ばした"
     activerecord:
       models:
+        user:
         post: '投稿'
+        comment:
       attributes:
+        user:
+          name: 'ニックネーム'
         post:
           title: 'タイトル'
-          phase: '段階'
+          phase: '成果段階'
+          body: '詳細'
+          way: '手段'
+          investment: '投資時間'
+        comment:
+          comment: 'コメント'
           
         errors:
         messages:

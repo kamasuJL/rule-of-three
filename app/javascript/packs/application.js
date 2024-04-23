@@ -18,6 +18,7 @@ import "../stylesheets/search";
 import "../stylesheets/top"; 
 import "../stylesheets/admin"; 
 import "../stylesheets/flash_message"; 
+import "../stylesheets/error_message"; 
 
 Rails.start()
 Turbolinks.start()
