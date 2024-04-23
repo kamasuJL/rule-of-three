@@ -79,7 +79,7 @@
 }
 
 .about-btn:hover {
-    background-color: #5a9999; 
+    background-color: #31a2ac;; 
 }
 
 .top-img-fluid {
@@ -91,4 +91,11 @@
 .top-card-img {
   object-fit: cover;
   height: 200px; 
+}
+
+.hr-custom-thick {
+  border-width: 2px; 
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #696969;
 }

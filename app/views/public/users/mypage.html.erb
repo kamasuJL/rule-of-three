@@ -16,7 +16,9 @@
         <div>
           <p>メールアドレス: <%= @user.email %></p>
         </div>
-        <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-primary mt-3" %>
+        <%= link_to edit_user_path(@user.id), class: "btn btn-primary mt-3" do %>
+            <i class="fa-solid fa-gear"></i> 会員情報の編集
+          <% end %>
       </div>
 
       <div class="mb-4">
@@ -24,9 +26,15 @@
         <hr class="my-3">
         <p>
           <%= link_to new_post_path, class: 'btn btn-secondary' do %>
-            <i class="fa-solid fa-layer-group"></i> 新規投稿
+            <i class="fa-solid fa-layer-group"></i> 投稿フォーム
           <% end %>
         </p>
+      </div>
+      <div class="mb-4">
+        <h4>グループ</h4>
+        <hr class="my-3">
+        <p><%=link_to "グループを作成する",new_group_path %> | 
+        <%=link_to "グループ一覧",groups_path %></p>
       </div>
     </div>
 

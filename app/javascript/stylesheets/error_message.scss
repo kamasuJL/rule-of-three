@@ -1,8 +1,8 @@
 #error_explanation {
   color: black;
-  background-color: white; 
+  background-color: white;
   padding: 5px;
-  border-left: 5px solid #dc3545; 
+  border-left: 5px solid #fa6775;
   border-radius: 5px;
   margin: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -15,16 +15,16 @@
 }
 
 #error_explanation li {
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
 }
 
 #error_explanation li i {
-  color: #dc3545; 
-  font-size: 14px; 
-  vertical-align: middle; 
+  color: #fa6775;
+  font-size: 14px;
+  vertical-align: middle;
 }
 
 #error_explanation i.fa-solid {
-  margin-right: 8px; 
-  color: #dc3545; 
+  margin-right: 8px;
+  color: #fa6775;
 }

@@ -10,6 +10,7 @@
         user:
         post: '投稿'
         comment:
+        group:
       attributes:
         user:
           name: 'ニックネーム'
@@ -21,6 +22,10 @@
           investment: '投資時間'
         comment:
           comment: 'コメント'
+        group:
+          name: 'グループ名'
+          introduction: '紹介文'
+          
           
         errors:
         messages:

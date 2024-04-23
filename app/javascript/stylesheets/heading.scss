@@ -21,3 +21,30 @@
 .my-page-container .row {
   margin-bottom: 5px;
 }
+
+
+.heading-sub {
+    display: inline-block;
+    position: relative;
+    padding: 0 2.5em;
+    color: #6e6e6e;
+}
+
+.heading-sub::before,
+.heading-sub::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 3px;
+    background-color: #a3a9ae;
+}
+
+.heading-sub::before {
+    left: 0;
+}
+
+.heading-sub::after {
+    right: 0;
+}
