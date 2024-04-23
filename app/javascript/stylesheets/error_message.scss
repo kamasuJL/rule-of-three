@@ -1,7 +1,7 @@
 #error_explanation {
   color: black;
   background-color: white; 
-  padding: 10px;
+  padding: 5px;
   border-left: 5px solid #dc3545; 
   border-radius: 5px;
   margin: 12px;
@@ -11,18 +11,20 @@
 #error_explanation ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0px;
 }
 
 #error_explanation li {
-  margin-bottom: 8px; 
-}
-
-.fa-solid {
-  margin-right: 8px; 
+  margin-bottom: 0px; 
 }
 
 #error_explanation li i {
   color: #dc3545; 
   font-size: 14px; 
   vertical-align: middle; 
+}
+
+#error_explanation i.fa-solid {
+  margin-right: 8px; 
+  color: #dc3545; 
 }
