@@ -19,6 +19,7 @@ import "../stylesheets/top";
 import "../stylesheets/admin"; 
 import "../stylesheets/flash_message"; 
 import "../stylesheets/error_message"; 
+import "../stylesheets/heading"; 
 
 Rails.start()
 Turbolinks.start()

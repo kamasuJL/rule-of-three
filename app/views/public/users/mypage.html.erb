@@ -1,54 +1,51 @@
-<div class="container">
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <h2 class="text-dark font-weight-bold">マイページ</h2>
-    </div>
-  </div>
-  <hr class="my-4">
-  <p>
-    <%= link_to new_post_path, class: 'btn btn-secondary' do %>
-      <i class="fa-solid fa-layer-group"></i> 新規投稿
-    <% end %>
-  </p>
-  <p><%=link_to "グループを作成する",new_group_path %> | 
-  <%=link_to "グループ一覧",groups_path %></p>
-
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="text-dark font-weight-bold">あなたの投稿</h4>
-      <hr class="my-4">
-      <% @posts.each do |post| %>
-        <div>
-          <%= link_to post.title, post_path(post.id) %>
-        </div>
-        <div>
-          <%= post.body %>
-        </div>
-      <% end %>
-    </div>
+<div class="my-page-container">
+  <div class="my-page-header">
+    <h2 class="heading">マイページ</h2>
+    <hr class="my-3">
   </div>
 
-  <div class="row mt-4">
-    <div class="col-md-12">
-      <h4 class="text-dark font-weight-bold">登録情報</h4>
-      <hr class="my-4">
+  <div class="my-page-content row">
+    <!-- サイドバー -->
+    <div class="my-page-sidebar col-md-3">
+      <div class="mb-4">
+        <h4>登録情報</h4>
+        <hr class="my-3">
+        <div>
+          <p>ユーザー名: <%= @user.name %></p>
+        </div>
+        <div>
+          <p>メールアドレス: <%= @user.email %></p>
+        </div>
+        <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-primary mt-3" %>
+      </div>
+
+      <div class="mb-4">
+        <h4>新規投稿</h4>
+        <hr class="my-3">
+        <p>
+          <%= link_to new_post_path, class: 'btn btn-secondary' do %>
+            <i class="fa-solid fa-layer-group"></i> 新規投稿
+          <% end %>
+        </p>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="my-page-main col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>あなたの投稿</h4>
+          <hr class="my-3">
+          <% @posts.each do |post| %>
+            <div>
+              <%= link_to post.title, post_path(post.id) %>
+            </div>
+            <div>
+              <%= post.body %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <p>ユーザー名</p>
-    </div>
-    <div class="col-md-3">
-      <p><%= @user.name %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <p>メールアドレス</p>
-    </div>
-    <div class="col-md-3">
-      <p><%= @user.email %></p>
-    </div>
-  </div>
-  <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-primary" %>
 </div>
