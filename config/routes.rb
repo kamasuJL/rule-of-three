@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     resources :groups, only: [:index, :destroy]
   end
   
-  
+  # 顧客パスワード再設定　追加
   # 顧客用URL /users/sign_in ...
-  devise_for :users,skip: [:passwords], controllers: {
+  devise_for :users, controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }

@@ -4,7 +4,7 @@
       <%= image_tag asset_path('top1.jpg'), alt: '' %>
       <p class="slide-text">Welcome to Rule Of Three</p>
     </div>
-                    
+
     <div class="swiper-slide">
       <%= image_tag asset_path('top2.jpg'), alt: '' %>
       <p class="slide-text">当サイトは、成功体験を投稿・共有できるサイトです<br>
@@ -12,7 +12,8 @@
     </div>
     <div class="swiper-slide">
       <%= image_tag asset_path('top3.jpg'), alt: '' %>
-      <p class="slide-text">仕事や趣味での成果不足や新しいスキル習得の際に<br>
+      <p class="slide-text">仕事や趣味での成果不足や<br>
+        新しいスキル習得の際に<br>
         ぜひご活用ください</p>
     </div>
   </div>
@@ -33,4 +34,49 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3 text-center">
+      <h1 class="mb-4">機能</h1>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 text-center">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div class="mb-2">
+            <h5 class="card-title mb-0">投稿</h5>
+          </div>
+          <%= image_tag 'top5', class: "img-fluid mb-2" %>
+          <p class="card-text">kinouを記入</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 text-center">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div class="mb-2">
+            <h5 class="card-title mb-0">一覧表示</h5>
+          </div>
+          <%= image_tag 'top5', class: "img-fluid mb-2" %>
+          <p class="card-text">kinouを記入</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 text-center">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div class="mb-2">
+            <h5 class="card-title mb-0">いいね</h5>
+          </div>
+          <%= image_tag 'top5', class: "img-fluid mb-2" %>
+          <p class="card-text">kinouを記入</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%= javascript_pack_tag 'top', 'data-turbolinks-track': 'reload' %>

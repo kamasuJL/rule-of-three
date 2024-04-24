@@ -1,0 +1,19 @@
+<%# deivseのフラッシュメッセージを表示 %>
+<% if notice.present? || alert.present? %>
+  <% if notice.present? %>
+    <div class="notice">
+      <i class="fa-solid fa-circle-check"></i>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert.present? %>
+    <div class="alert">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <%= alert %>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+  

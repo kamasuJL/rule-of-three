@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :group_users, dependent: :destroy
   has_many :permits, dependent: :destroy
   
-  validates :name, presence: true, length: { in: 1..9 }
+  validates :name, presence: true, length: { maximum: 20 }
   
   def self.search_for(content)
     if content.present?

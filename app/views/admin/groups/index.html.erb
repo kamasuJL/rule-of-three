@@ -1,29 +1,41 @@
 <div class="container mt-5">
   <h3>グループ一覧</h3>
-  <div class="table-responsive">
-    <table class="table mt-3">
-      <tr>
-        <th class="col-2">グループ名</th>
-        <th class="col-8">紹介文</th>
-        <th class="col-1"></th>
-        <th class="col-1"></th>
-      </tr>
-      <% @groups.each do |group| %>
-        <tr>
-          <td class="col-2">
-            <% if group.group_image.attached? %>
-              <%= image_tag group.group_image,size:"50x50" %>
-            <% else %>
-              <%= image_tag 'no_image', size: "50x50" %>
-            <% end %>
-          </td>
-          <td class="col-2"><%= group.name %></td>
-          <td class="col-8"><%= group.introduction %></td>
-          <td class="col-1">
-          <%= link_to '削除', admin_group_path(group), method: :delete, data: { confirm: '本当に削除しますか?' },class: "btn btn-sm btn-danger" %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
+  <div class="row flex-column-reverse flex-md-row">
+    <div class="col-md-3 mb-3 custom-margin">
+      <div class="sidebar_content">
+        <div class="list-group list-group-flush">
+          <div class="card">
+            <div class="card-header bg-dark text-white">タグ一覧</div>
+            <%= link_to "全て", admin_groups_path, class: "list-group-item list-group-item-action" %>
+            <%# @groups.each do |group| %>
+            <%# link_to group.name, admin_groups_path(genre_search: genre.id), class: "list-group-item list-group-item-action" %>
+            <%# end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9 custom-margin">
+      <div class="row">
+        <% @groups.each do |group| %>
+          <div class="col-md-4 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0"><%= group.name %></h5>
+                </div>
+                <% if group.group_image.attached? %>
+                  <%= image_tag group.group_image, class: "img-fluid mb-2" %>
+                <% else %>
+                  <%= image_tag 'no_image_yoko', class: "img-fluid mb-2" %>
+                <% end %>
+                <p class="card-text"><%= group.introduction %></p>
+                <%= link_to '削除', admin_group_path(group), method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-sm btn-danger" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

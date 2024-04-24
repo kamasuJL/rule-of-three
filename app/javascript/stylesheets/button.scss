@@ -1,28 +1,22 @@
-/* ボタンのホバー時のスタイル */
-// input[type="submit"]:hover {
-  // background-color: #dcdcdc; /* ホバー時の背景色を灰色に変更 */
-  // color: grey; /* ホバー時のテキスト色を白色に変更 */
-  // border: 1px solid #dcdcdc;
-  
   .btn-primary:hover {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  background: #00BFFF;
-  border-color: #00BFFF;
+  background: #31a2ac;
+  border-color: #31a2ac;
   border-radius: 6px;
   transition: .3s;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
   .btn-secondary:hover {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  background: #333;
-  // padding: 18px 30px;
+  background: #555555;
+  border-color: #555555;
   border-radius: 6px;
   transition: .3s;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .btn-danger:hover {
@@ -33,7 +27,7 @@
   border-color: #DB7093;
   border-radius: 6px;
   transition: .3s;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .btn-info:hover {
@@ -44,5 +38,7 @@
   border-color: #008080;
   border-radius: 6px;
   transition: .3s;
-  transform: scale(1.05);
+  transform: scale(1.01);
+  justify-content: center; 
+  align-items: center; 
 }
