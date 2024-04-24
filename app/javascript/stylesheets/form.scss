@@ -13,12 +13,12 @@ form{
 	border-left: solid 3px #FF6701;
 	padding-left: 10px;
 }
-.input_form{
-	float: left;
-	width:300px;
+
+.actions{
+	text-align: center;
 }
+
 input[type="text"],
-input[type="number"],
 input[type="email"],
 textarea{
 	border: solid 1px #e0e0e0;
@@ -26,29 +26,7 @@ textarea{
 	padding:8px;
 	font-size: 15px;
 }
+
 textarea{
 	height: 100px;
-}
-.btn-area{
-	text-align: center;
-}
-input[type="submit"]{
-	background: #FF6701;
-	border: none;
-	color: #fff;
-	font-size:15px;
-	font-weight:bold;
-	padding: 10px 20px;
-	margin: 0 10px;
-	border-radius: 10px;
-}
-input[type="reset"]{
-	background: #aaa;
-	border: none;
-	color: #fff;
-	font-size:15px;
-	font-weight:bold;
-	padding: 10px 20px;
-	margin: 0 10px;
-	border-radius: 10px;
 }
