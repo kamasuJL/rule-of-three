@@ -14,12 +14,9 @@ form{
 	padding-left: 10px;
 }
 
-.actions{
-	text-align: center;
-}
-
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea{
 	border: solid 1px #e0e0e0;
 	border-radius:5px;
@@ -28,5 +25,9 @@ textarea{
 }
 
 textarea{
-	height: 100px;
+	height: 300px;
+}
+
+.actions{
+	text-align: center;
 }

@@ -27,18 +27,18 @@
     </div>
 
     <div class="form-group">
-      <label for="post_body">成果の詳細</label>
-      <%= f.text_area :body, placeholder: "例）社内年間優秀賞受賞、県大会１位、模試学年１位", class: "form-control", id: "post_body" %>
+      <label for="post_body" class="label">成果の詳細</label>
+      <%= f.text_field :body, placeholder: "例）社内年間優秀賞受賞、県大会１位、模試学年１位", class: "form-control", id: "post_body" %>
     </div>
 
     <div class="form-group">
       <label for="post_way">具体的な手段</label>
-      <%= f.text_field :way, class: "form-control", id: "post_way" %>
+      <%= f.text_area :way, class: "form-control", id: "post_way" %>
     </div>
 
     <div class="form-group">
       <label for="post_investment">頻度・投資時間量・継続期間</label>
-      <%= f.text_area :investment, class: "form-control", id: "post_investment" %>
+      <%= f.text_field :investment, class: "form-control", id: "post_investment" %>
     </div>
 
     <div class="form-group">
