@@ -12,6 +12,7 @@ import "jquery";
 import "popper.js";
 import "bootstrap";
 import "./about";
+import "./form";
 import "../stylesheets/application";
 import "../stylesheets/button";
 import "../stylesheets/about";
@@ -21,6 +22,7 @@ import "../stylesheets/admin";
 import "../stylesheets/flash_message";
 import "../stylesheets/error_message";
 import "../stylesheets/heading";
+import "../stylesheets/form";
 
 Rails.start()
 Turbolinks.start()

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
   # 顧客パスワード再設定　追加
   # 顧客用URL /users/sign_in ...
-  devise_for :users, controllers: {
+  devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
