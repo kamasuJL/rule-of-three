@@ -15,4 +15,12 @@ class Group < ApplicationRecord
   def includesUser?(user)
     group_users.exists?(user_id: user.id)
   end
+  
+  def self.search_for(content)
+    if content.present?
+      Group.where('name LIKE ?', '%'+content+'%')
+    else
+      Grouop.none
+    end
+  end
 end

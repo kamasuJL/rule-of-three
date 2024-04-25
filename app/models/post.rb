@@ -16,7 +16,6 @@ class Post < ApplicationRecord
       Post.where('title LIKE ?', '%'+content+'%')
     else
       Post.none
-      # 空欄の場合に何も表示しない
     end
   end
 
