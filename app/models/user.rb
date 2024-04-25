@@ -12,6 +12,8 @@ class User < ApplicationRecord
   
   validates :name, presence: true, length: { maximum: 20 }
   
+  
+  
   def self.search_for(content)
     if content.present?
       User.where('name LIKE ?', '%' + content + '%')
