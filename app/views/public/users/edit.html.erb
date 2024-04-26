@@ -2,7 +2,7 @@
   <div class='row'>
     <div class="col-lg-5 px-5 px-sm-0 mx-auto">
       <%= render 'layouts/error_messages', resource: @user %>
-      <h2>User info</h2>
+      <h2 class="heading-sub mt-3">ユーザー編集</h2>
       <%= form_with model:@user, local:true do |f| %>
         <div class="form-group">
           <%= f.label :name, class: "label" %>

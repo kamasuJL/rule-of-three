@@ -1,23 +1,28 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h3>Editing Group</h3>
+      <h2 class="heading-sub mt-3">グループ編集</h2>
       <%= render 'layouts/error_messages', resource: @group %>
       <%= form_with model: @group, local: true do |f| %>
         <div class="form-group">
-          <%= f.label :グループ名 %>
+          <%= f.label :グループ名, class: "label" %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
       
         <div class="form-group">
-          <%= f.label :紹介文 %>
+          <%= f.label :紹介文, class: "label" %>
           <%= f.text_area :introduction, class: 'form-control' %>
         </div>
-      
+        
         <div class="form-group">
-          <%= f.label :グループ画像 %>
-          <%= f.file_field :group_image, class: "form-control-file" , accept: "image/*" %>
-        </div>
+            <%= f.label :グループ画像, class: "label" %>
+            <label for="group_image" class="custom-file">
+              <i class="fa-solid fa-camera"></i>
+              <span class="ml-2">画像を選択する</span> 
+            </label>
+            <%= f.file_field :group_image, id: "group_image", class: "hidden", accept: "image/*" %>
+            <span class="select-image">選択されていません</span>
+          </div>
       
         <div class="form-group">
           <%= f.submit class: 'btn btn-info' %>

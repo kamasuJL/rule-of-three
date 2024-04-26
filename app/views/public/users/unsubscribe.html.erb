@@ -15,7 +15,7 @@
 
   <div class="row mt-4 justify-content-center">
     <div class="col-md-2 text-center mb-3">
-      <%= link_to "退会しない", mypage_path(current_user), class: "btn btn-primary" %>
+      <%= link_to "退会しない", mypage_path(current_user), class: "btn btn-info" %>
     </div>
     <div class="col-md-2 text-center mb-3">
       <%= link_to "退会する", user_withdraw_path, method: :patch, class:"btn btn-danger ms-3", data: { confirm: "本当に退会しますか？"} %>

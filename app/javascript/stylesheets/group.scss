@@ -1,0 +1,19 @@
+.rounded-hexagon {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.rounded-groups {
+  width: 200px; 
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.card-text-groups {
+  height: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

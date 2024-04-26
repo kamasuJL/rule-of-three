@@ -11,30 +11,39 @@
         <h4>登録情報</h4>
         <hr class="my-3">
         <div>
+          <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle" %>
+        </div>
+        <div>
           <p>ユーザー名: <%= @user.name %></p>
         </div>
         <div>
           <p>メールアドレス: <%= @user.email %></p>
         </div>
-        <%= link_to edit_user_path(@user.id), class: "btn btn-primary mt-3" do %>
-            <i class="fa-solid fa-gear"></i> 会員情報の編集
+        <%= link_to edit_user_path(@user.id), class: "btn btn-info mt-3" do %>
+            <i class="fa-solid fa-gear"></i>会員情報の編集
           <% end %>
       </div>
 
       <div class="mb-4">
         <h4>新規投稿</h4>
         <hr class="my-3">
-        <p>
+        <div>
           <%= link_to new_post_path, class: 'btn btn-secondary' do %>
-            <i class="fa-solid fa-layer-group"></i> 投稿フォーム
+            <i class="fa-solid fa-pen-nib"></i>投稿フォーム
           <% end %>
-        </p>
+        </div>
       </div>
       <div class="mb-4">
         <h4>グループ</h4>
         <hr class="my-3">
-        <p><%=link_to "グループを作成する",new_group_path %> | 
-        <%=link_to "グループ一覧",groups_path %></p>
+      </div>
+      <div>
+        <%= link_to new_group_path, class: 'btn btn-secondary' do %>
+          <i class="fa-regular fa-square-plus"></i>グループ作成
+        <% end %>
+        <%= link_to groups_path, class: 'btn btn-secondary' do %>
+          <i class="fa-solid fa-list"></i>グループ一覧
+        <% end %>
       </div>
     </div>
 
@@ -44,14 +53,7 @@
         <div class="col-md-12">
           <h4>あなたの投稿</h4>
           <hr class="my-3">
-          <% @posts.each do |post| %>
-            <div>
-              <%= link_to post.title, post_path(post.id) %>
-            </div>
-            <div>
-              <%= post.body %>
-            </div>
-          <% end %>
+          <%= render 'public/posts/index', posts: @posts %>
         </div>
       </div>
     </div>

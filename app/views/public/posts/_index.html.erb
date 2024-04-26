@@ -1,45 +1,27 @@
-<div class="container">
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <% posts.each do |post| %>
-        <div class="row">
-          
-          <div class="card-text">
-            投稿ユーザー画像:<%= image_tag post.user.get_profile_image(100,100) %>
-          </div>
-          
-          <div class="col-md-2">
-            <label>ユーザー名</label>
-          </div>
-          <div class="col-md-2">
-            <p><%= link_to post.user.name, user_path(post.user) %></p>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-2">
-            <label>タイトル</label>
-          </div>
-          <div class="col-md-2">
-            <p><%= link_to post.title, post_path(post) %></p>
-          </div>
-
-          <div class="col-md-1">
-            <label>本文</label>
-          </div>
-          <div class="col-md-7">
-            <p><%= post.body %></p>
-          </div>
-          
-          <div class="col-md-2">
-            <label>コメント数</label>
-          </div>
-          <div class="comments-count col-md-2">
-            <p><%= render "public/comments/count", post: post %></p>
+<div class="card-list-container py-2">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <% posts.each do |post| %>
+    <div class="col mb-4">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to post_path(post), class: "text-dark" do %><%= post.title %><% end %></h5>
+          <p class="card-text"><%= post.body %></p>
+          <div class="row">
+            <div class="col-6">
+              <%= image_tag post.user.get_profile_image(100,100), class: "rounded-circle"; %>
+            </div>
+            <div class="col-6 pt-4">
+              <div class="card-text">
+                <span><i class="fas fa-user"></i><%= link_to post.user.name, user_path(post.user) %></span>
+              </div>
+              <div class="card-text">
+                <span><i class="fa fa-comment"></i><%= render "public/comments/count", post: post, class:"text-dark" %></span>
+              </div>
+            </div>
           </div>
         </div>
-        <hr class="mt-1">
-      <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
