@@ -11,6 +11,10 @@
           <p><%= @user.name %></p>
         </div>
       </div>
+      
+      <div>
+        <%= image_tag @user.get_profile_image(100,100) %>
+      </div>
 
       <% if current_user == @user %>
         <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-primary" %>

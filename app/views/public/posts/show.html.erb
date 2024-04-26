@@ -26,6 +26,10 @@
             <label for="post_investment">⚫︎頻度・投資時間量・継続期間</label>
             <p><%= @post.investment %></p>
           </div>
+          
+          <div class="card-text">
+            投稿ユーザー画像:<%= image_tag @post.user.get_profile_image(100,100) %>
+          </div>
 
           <div class="card-text">
             <label for="comments-count">⚫コメント数</label>
