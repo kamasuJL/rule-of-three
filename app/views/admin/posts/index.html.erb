@@ -1,0 +1,45 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-10 mt-3'>
+      <h2 class="heading-sub mt-3">投稿一覧</h2>
+    </div>
+  </div>
+  <div class="card-list-container py-2">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+      <% @posts.each do |post| %>
+        <div class="col mb-4">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= post.title %>
+              </h5>
+              <p class="card-text"><%= post.body %></p>
+              <div class="row">
+                <div class="col-6">
+                  <%= image_tag post.user.get_profile_image(100,100), class: "rounded-circle"; %>
+                </div>
+                <div class="col-6 pt-4">
+                  <div class="card-text">
+                    <span>
+                      <i class="fas fa-user"></i>
+                      <%= post.user.name %>
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span>
+                      <i class="fa fa-comment"></i>
+                      <%= render "public/comments/count", post: post, class:"text-dark" %>
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <%= link_to '削除', admin_post_path(post), method: :delete, data: { confirm: '本当に削除しますか?' },class: "btn btn-sm btn-danger" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
