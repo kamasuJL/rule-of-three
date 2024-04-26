@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mb-4">
     <div class="col-md-12">
-      <h2 class="heading mb-4">投稿詳細</h2>
+      <h2 class="heading-sub mt-3">投稿詳細</h2>
       <hr class="my-3">
       <div class="card">
         <div class="card-body">
@@ -25,6 +25,10 @@
           <div class="card-text">
             <label for="post_investment">⚫︎頻度・投資時間量・継続期間</label>
             <p><%= @post.investment %></p>
+          </div>
+          
+          <div class="card-text">
+            投稿ユーザー画像:<%= image_tag @post.user.get_profile_image(100,100) %>
           </div>
 
           <div class="card-text">

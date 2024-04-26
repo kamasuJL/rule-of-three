@@ -1,30 +1,23 @@
-<div class="container">
-  <div class="row mb-4">
-    <div class="col-md-12">
-      <h1 class="font-weight-bold mb-4">会員情報</h1>
-      
-      <div class="row">
-        <div class="col-md-2">
-          <label>ユーザー名</label>
-        </div>
-        <div class="col-md-2">
-          <p><%= @user.name %></p>
-        </div>
+<div class="container-user">
+  <div class="row mb-4 ml-2">
+    <!-- サイドバー -->
+    <div class="col-md-3">
+      <h5 class="heading-sub mt-3">ユーザー詳細</h5>
+      <div>
+        <%= image_tag @user.get_profile_image(100,100), class: "rounded-circle"; %>
       </div>
-
+      <div>
+        <p>ユーザー名: <%= @user.name %></p>
+      </div>
       <% if current_user == @user %>
-        <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-primary" %>
+        <%= link_to "会員情報の編集", edit_user_path(@user.id), class: "btn btn-info" %>
       <% end %>
-      
-      <div class="row">
-        <div class="col-md-2">
-          <label>投稿履歴</label>
-        </div>
-        <div class="col-md-10">
-          <p><%= render 'public/posts/index',posts: @posts %></p>
-        </div>
-      </div>
-      
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="col-md-9">
+      <h5 class="heading-sub mt-3">投稿履歴</h5>
+      <%= render 'public/posts/index', posts: @posts %>
     </div>
   </div>
 </div>

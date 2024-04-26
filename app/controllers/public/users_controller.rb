@@ -3,6 +3,7 @@ class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
   before_action :is_matching_login_user, only: [:unsubscribe, :withdraw]
+  before_action :ensure_guest_user, only: [:edit]
   
   def mypage
     @posts = current_user.posts
@@ -45,7 +46,7 @@ class Public::UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :is_active)
+    params.require(:user).permit(:name, :email, :is_active, :profile_image)
   end
   
   def ensure_correct_user
@@ -61,5 +62,12 @@ class Public::UsersController < ApplicationController
       redirect_to root_path, alert: "Access denied."
     end
   end
+  
+  def ensure_guest_user
+    @user = User.find(params[:id])
+    if @user.guest_user?
+      redirect_to user_path(current_user) , alert: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
+    end
+  end  
   
 end
