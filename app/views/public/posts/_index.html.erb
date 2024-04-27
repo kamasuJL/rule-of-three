@@ -3,29 +3,33 @@
     <% posts.each do |post| %>
       <div class="col mb-4">
         <div class="card shadow-lg">
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">
               <%= link_to post_path(post), class: "text-dark" do %>
                 <%= post.title %>
               <% end %>
             </h5>
-            <p class="card-text"><%= post.body %></p>
-            <div class="row">
-              <div class="col-6">
-                <%= image_tag post.user.get_profile_image(100,100), class: "rounded-circle"; %>
-              </div>
-              <div class="col-6 pt-4">
-                <div class="card-text">
-                  <span>
-                    <i class="fas fa-user"></i>
-                    <%= link_to post.user.name, user_path(post.user) %>
-                  </span>
+            <p class="card-text flex-grow-1">
+              <%= post.body %>
+            </p>
+            <div class="mt-auto">
+              <div class="row">
+                <div class="col-6">
+                  <%= image_tag post.user.get_profile_image(100,100), class: "rounded-circle"; %>
                 </div>
-                <div class="card-text">
-                  <span>
-                    <i class="fa fa-comment"></i>
-                    <%= render "public/comments/count", post: post, class:"text-dark" %>
-                  </span>
+                <div class="col-6 pt-4">
+                  <div class="card-text">
+                    <span>
+                      <i class="fas fa-user"></i>
+                      <%= link_to post.user.name, user_path(post.user) %>
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span>
+                      <i class="fa fa-comment"></i>
+                      <%= render "public/comments/count", post: post, class:"text-dark" %>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -35,3 +39,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'group', 'data-turbolinks-track': 'reload' %>

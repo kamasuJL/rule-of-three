@@ -1,13 +1,9 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//   var cardBodies = document.querySelectorAll(".card-body");
-//   var maxHeight = 0;
-//   cardBodies.forEach(function(body) {
-//     var height = body.clientHeight;
-//     if (height > maxHeight) {
-//       maxHeight = height;
-//     }
-//   });
-//   cardBodies.forEach(function(body) {
-//     body.style.height = maxHeight + "px";
-//   });
-// });
+/*global $*/
+
+$(document).ready(function(){
+  var maxHeight = 0;
+  $(".card-body").each(function(){
+    if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+  });
+  $(".card-body").height(maxHeight);
+});
