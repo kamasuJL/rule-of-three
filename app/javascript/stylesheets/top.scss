@@ -1,7 +1,7 @@
 .swiper-slide img {
     height: 100%;
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 @keyframes fade-in {
@@ -27,7 +27,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            
+
             p {
                 position: absolute;
                 top: 40%;
@@ -52,17 +52,24 @@
     }
 }
 
+.swiper-button-next, .swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+}
 
 .btn-section {
-  background-color: #324851; 
+  background-color: #324851;
 }
 
 .about-btn {
   display: inline-block;
-  margin: 1px 20px; 
+  margin: 1px 20px;
   padding: 10px 30px;
   background-color: transparent;
-  border-style: solid; 
+  border-style: solid;
   border-color: white;
   color: white;
   text-decoration: none;
@@ -79,22 +86,22 @@
 }
 
 .about-btn:hover {
-    background-color: #31a2ac;; 
+    background-color: #31a2ac;;
 }
 
 .top-img-fluid {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .top-card-img {
   object-fit: cover;
-  height: 200px; 
+  height: 200px;
 }
 
 .hr-custom-thick {
-  border-width: 2px; 
+  border-width: 2px;
   margin-top: 5px;
   margin-bottom: 10px;
   color: #696969;
