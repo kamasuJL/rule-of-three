@@ -1,6 +1,6 @@
 .section {
     position: relative;
-    background: url("/assets/about.jpg");
+    background-image: image-url("about.jpg");
     background-size: cover;
     background-position: center;
     height: 450px;
