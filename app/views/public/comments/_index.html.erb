@@ -1,11 +1,14 @@
-
-  <% post.comments.each do |comment| %>
+<% post.comments.each do |comment| %>
   <div class="row mb-1 ">
-    <div class="col-md-3">
+    <div class="col-md-3 d-flex flex-column" >
+      <%= image_tag comment.user.get_profile_image(50,50), class: "rounded-circle" %>
+      <div>
       <%= link_to user_path(comment.user) do %>
         <%= comment.user.name %>
       <% end %>
+      </div>
     </div>
+    
     <div class="col-md-3">
       <%= comment.comment %>
     </div>
@@ -14,5 +17,5 @@
         <%= link_to "Destroy", comment_path(comment), method: :delete, class: "btn btn-danger btn-sm", remote: true %>
       <% end %>
     </div>
-    </div>
-  <% end %>
+  </div>
+ <% end %>
