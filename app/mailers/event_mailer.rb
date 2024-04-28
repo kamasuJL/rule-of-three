@@ -1,4 +1,6 @@
 class EventMailer < ApplicationMailer
+  before_action :validate_event_params
+  
   def send_notification(member, event)
     @group = event[:group]
     @title = event[:title]
@@ -17,5 +19,12 @@ class EventMailer < ApplicationMailer
     group.users.each do |member|
       EventMailer.send_notification(member, event).deliver_now
     end
+  end
+
+  private
+
+  def validate_event_params
+    raise 'Title is required' unless @title.present?
+    raise 'Body is required' unless @body.present?
   end
 end
