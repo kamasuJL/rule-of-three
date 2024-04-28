@@ -5,34 +5,38 @@
       <hr class="my-3">
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title"><%= @post.title %></h2>
+          <h2 class="card-title text-info"><%= @post.title %></h2>
 
-          <div class="card-text">
-            <label for="post_body">⚫︎タイトル</label>
-            <p><%= @post.body %></p>
-          </div>
-
-          <div class="card-text">
-            <label for="post_phase">⚫︎成果段階</label>
-            <p><%= @post.phase_i18n %></p>
-          </div>
-
-          <div class="card-text">
-            <label for="post_way">⚫︎具体的な手段</label>
-            <p><%= @post.way %></p>
-          </div>
-
-          <div class="card-text">
-            <label for="post_investment">⚫︎頻度・投資時間量・継続期間</label>
-            <p><%= @post.investment %></p>
+          <div class="card-text d-flex flex-column mt-3">
+            <label class="label" for="post_body">成果の詳細</label>
+            <div class="flex-grow-1">
+                <p><%= @post.body %></p>
+            </div>
           </div>
           
-          <div class="card-text">
-            投稿ユーザー画像:<%= image_tag @post.user.get_profile_image(100,100) %>
+          <div class="card-text d-flex flex-column mt-3">
+            <label class="label" for="post_phase">成果段階</label>
+            <div class="flex-grow-1">
+                <p><%= @post.phase_i18n %></p>
+            </div>
+          </div>
+          
+          <div class="card-text d-flex flex-column mt-3">
+            <label class="label" for="post_way">具体的な手段</label>
+            <div class="flex-grow-1">
+                <p><%= @post.way %></p>
+            </div>
+          </div>
+          
+          <div class="card-text d-flex flex-column mt-3">
+            <label class="label" for="post_investment">頻度・投資時間量・継続期間</label>
+            <div class="flex-grow-1">
+                <p><%= @post.investment %></p>
+            </div>
           </div>
 
           <div class="card-text">
-            <label for="comments-count">⚫コメント数</label>
+            <label class="label" for="comments-count">コメント数</label>
             <p><%= render "public/comments/count", post: @post %></p>
           </div>
 
