@@ -28,7 +28,7 @@ class Group < ApplicationRecord
     if content.present?
       Group.where('name LIKE ?', '%'+content+'%')
     else
-      Grouop.none
+      Group.none
     end
   end
 end

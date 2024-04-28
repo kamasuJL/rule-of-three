@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <h3 class="text-center">"<%= @content %>"を含むユーザーの検索結果</h3>
+        <h2 class="heading-sub mt-3 text-center">"<%= @content %>"を含むユーザーの検索結果</h2>
         <%= render 'public/users/index', users: @records %>
       </div>
     </div>
@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <h3 class="text-center">"<%= @content %>"を含む投稿の検索結果</h3>
+        <h2 class="heading-sub mt-3 text-center">"<%= @content %>"を含む投稿の検索結果</h2>
         <%= render 'public/posts/index', posts: @records %>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <h3 class="text-center">"<%= @content %>"を含むグループの検索結果</h3>
+        <h2 class="heading-sub mt-3 text-center">"<%= @content %>"を含むグループの検索結果</h2>
         <%= render 'public/groups/index', groups: @records %>
       </div>
     </div>
