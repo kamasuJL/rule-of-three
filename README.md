@@ -29,6 +29,9 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 使用技術
+[![](https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
 ​
 ## 使用素材
 著作権を考慮し、架空のデータを扱う予定です。
