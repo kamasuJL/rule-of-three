@@ -1,6 +1,6 @@
 # Rule Of Three
 <img width="300" alt="logo" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/0ed96778-f656-429d-ba72-92f1354102bc">  
-​
+​  
 ## サイト概要
 ### サイトテーマ
 成果を共有し、目標設定をサポートするコミュニティサイト
