@@ -8,8 +8,13 @@ class Public::GroupsController < ApplicationController
   
   def create
     @group = Group.new(group_params)
+    # tags = Vision.get_image_data(group_params[:image])
+    tags = Vision.get_image_data(params[:group][:group_image])
       @group.owner_id = current_user.id
       if @group.save
+        tags.each do |tag|
+          @group.tags.create(name: tag)
+        end
         redirect_to groups_path
       else
         render 'new'
