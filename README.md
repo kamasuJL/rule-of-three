@@ -55,5 +55,6 @@
 <!--- 外部サービスの画像素材・音声素材のサービス名とURLを明記-->  
 **画像等は以下から取得**  
 > Unsplash：https://unsplash.com/
-
+> Canva：https://www.canva.com/
+> いらすとや:https://www.irasutoya.com/
 <!--- アプリケーションの実装に使用したgem/bootstrapのリファレンスなどの記載は不要-->
