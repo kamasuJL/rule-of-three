@@ -44,6 +44,16 @@
       <label for="post_investment" class="label">頻度・投資時間量・継続期間</label>
       <%= f.text_field :investment, class: "form-control", id: "post_investment" %>
     </div>
+    
+    <div class="form-group">
+      <%= f.label :投稿画像, class: "label" %>
+      <label for="post_image" class="custom-file">
+        <i class="fa-solid fa-camera"></i>
+        <span class="ml-2">画像を選択する</span> 
+      </label>
+      <%= f.file_field :post_image, id: "post_image", class: "hidden", accept: "image/*" %>
+      <span class="select-image">選択されていません</span>
+    </div>
 
     <div class="form-group">
       <%= f.submit '投稿', class: 'btn btn-secondary' %>

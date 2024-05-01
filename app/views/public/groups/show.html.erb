@@ -16,6 +16,11 @@
                 <li><%= user.name %></li>
               <% end %>
             </ul>
+            <div class="tag-box">
+              <% @group.tags.each do |tag| %>
+                <span class="tag"><%= tag.name %></span>
+              <% end %>
+            </div>
           </div>
           <div class="group-actions">
             <% if @group.is_owned_by?(current_user) %>

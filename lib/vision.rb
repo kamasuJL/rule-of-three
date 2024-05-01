@@ -21,7 +21,10 @@ module Vision
             {
               type: 'LABEL_DETECTION'
             }
-          ]
+          ],
+          imageContext: {
+            languageHints: ['ja'] # 日本語を指定
+          }
         }]
       }.to_json
 
