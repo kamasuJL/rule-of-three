@@ -3,6 +3,10 @@ class Group < ApplicationRecord
   belongs_to :owner, class_name: 'User'
   has_many :users, through: :group_users, source: :user
   has_many :permits, dependent: :destroy
+  has_many :post_tags, dependent: :destroy
+  has_many :tags, through: :post_workout_tags
+  
+  has_many :tags, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :introduction, presence: true, length: { maximum: 200 }
