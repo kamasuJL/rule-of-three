@@ -5,7 +5,7 @@
   <%= form_with model: @post, class: "mt-4" do |f| %>
     <div class="form-group">
       <label for="post_title" class="label">数値成果を挙げた分野</label>
-      <%= f.text_field :title, placeholder: "例）営業、部活、学業", class: "form-control", id: "post_title" %>
+      <%= f.text_field :title, placeholder: "例）営業", class: "form-control", id: "post_title" %>
     </div>
     
     <div class="form-group">
@@ -32,29 +32,19 @@
 
     <div class="form-group">
       <label for="post_body" class="label">成果の詳細</label>
-      <%= f.text_field :body, placeholder: "例）社内年間優秀賞受賞、県大会１位、模試学年１位", class: "form-control", id: "post_body" %>
+      <%= f.text_field :body, placeholder: "例）社内年間優秀賞受賞", class: "form-control", id: "post_body" %>
     </div>
 
     <div class="form-group">
       <label for="post_way" class="label">具体的な手段</label>
-      <%= f.text_area :way, class: "form-control", id: "post_way" %>
+      <%= f.text_area :way, placeholder: "例）トークスクリプトの作成・修正、成約率から逆算してアポ数の目標設定", class: "form-control", id: "post_way" %>
     </div>
 
     <div class="form-group">
       <label for="post_investment" class="label">頻度・投資時間量・継続期間</label>
-      <%= f.text_field :investment, class: "form-control", id: "post_investment" %>
+      <%= f.text_field :investment, placeholder: "例）3時間、週5日、2年間", class: "form-control", id: "post_investment" %>
     </div>
     
-    <div class="form-group">
-      <%= f.label :投稿画像, class: "label" %>
-      <label for="post_image" class="custom-file">
-        <i class="fa-solid fa-camera"></i>
-        <span class="ml-2">画像を選択する</span> 
-      </label>
-      <%= f.file_field :post_image, id: "post_image", class: "hidden", accept: "image/*" %>
-      <span class="select-image">選択されていません</span>
-    </div>
-
     <div class="form-group">
       <%= f.submit '投稿', class: 'btn btn-secondary' %>
     </div>
