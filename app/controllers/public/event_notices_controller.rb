@@ -1,4 +1,6 @@
 class Public::EventNoticesController < ApplicationController
+  before_action :ensure_correct_user
+
   def new
     @group = Group.find(params[:group_id])
   end
@@ -9,7 +11,7 @@ class Public::EventNoticesController < ApplicationController
     @body = params[:body]
 
     if @title.blank? || @body.blank?
-      flash[:alert] = "Title and body cannot be empty!"
+      flash[:alert] = "タイトルと本文を入力してください"
       redirect_to request.referer || new_group_event_notice_path
     else
 
@@ -26,6 +28,15 @@ class Public::EventNoticesController < ApplicationController
 
   def sent
     redirect_to group_path(params[:group_id])
+  end
+
+  private
+
+  def ensure_correct_user
+    @group = Group.find(params[:group_id])
+    unless @group.owner_id == current_user.id
+      redirect_to group_path(@group), alert: "グループオーナーのみ可能な機能です"
+    end
   end
 
 end
