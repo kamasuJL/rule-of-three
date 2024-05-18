@@ -8,17 +8,31 @@ class Public::GroupsController < ApplicationController
   
   def create
     @group = Group.new(group_params)
-    # tags = Vision.get_image_data(group_params[:image])
-    tags = Vision.get_image_data(params[:group][:group_image])
-      @group.owner_id = current_user.id
-      if @group.save
-        tags.each do |tag|
-          @group.tags.create(name: tag)
-        end
-        redirect_to groups_path
-      else
-        render 'new'
+    group_image = params[:group][:group_image]
+
+    if group_image.nil?
+      flash[:alert] = "画像ファイルをアップロードしてください。"
+      render 'new' and return
+    end
+
+    begin
+      # 画像からタグを取得
+      tags = Vision.get_image_data(group_image)
+    rescue => e
+      flash[:alert] = "画像の解析に失敗しました: #{e.message}"
+      render 'new' and return
+    end
+
+    @group.owner_id = current_user.id
+
+    if @group.save
+      tags.each do |tag|
+        @group.tags.create(name: tag)
       end
+      redirect_to groups_path, notice: 'グループが作成されました。'
+    else
+      render 'new'
+    end
   end
   
   def show
@@ -57,5 +71,4 @@ class Public::GroupsController < ApplicationController
       redirect_to group_path(@group), alert: "グループオーナーのみ編集が可能です"
     end
   end
-  
 end

@@ -5,6 +5,9 @@ require 'net/https'
 module Vision
   class << self
     def get_image_data(image_file)
+      # ファイルが存在しない場合のチェック
+      raise 'Image file is nil' if image_file.nil?
+
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_API_KEY']}"
 
@@ -36,15 +39,13 @@ module Vision
       request['Content-Type'] = 'application/json'
       response = https.request(request, params)
       response_body = JSON.parse(response.body)
+
       # APIレスポンス出力
-      if (error = response_body['responses'][0]['error']).present?
-        raise error['message']
+      if response_body['responses'][0].key?('error')
+        raise response_body['responses'][0]['error']['message']
       else
         response_body['responses'][0]['labelAnnotations'].pluck('description').take(3)
       end
     end
   end
 end
-
-
-
