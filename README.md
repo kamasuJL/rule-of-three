@@ -25,7 +25,7 @@
 **ER図**
 <img width="1001" alt="ER図" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/aa286db3-8c3c-4b1b-8bfc-ae7aefb34281">
 
-**UI Flow**
+**UI Flow**  
 <img width="500" alt="顧客UI" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/ca6642d5-8215-4635-90a2-af4629c763be">  
 <img width="500" alt="管理者UI" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/1ffd5383-4264-44f2-9d02-4a0d527c487c">
 ​
