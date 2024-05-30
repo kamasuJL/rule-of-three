@@ -27,7 +27,7 @@
 
 **UI Flow**
 <img width="551" alt="顧客UI" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/ca6642d5-8215-4635-90a2-af4629c763be">
-
+<img width="618" alt="管理者UI" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/1ffd5383-4264-44f2-9d02-4a0d527c487c">
 ​
 ## 開発環境
 - OS：Linux(CentOS)
