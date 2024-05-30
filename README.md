@@ -26,6 +26,8 @@
 <img width="1001" alt="ER図" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/aa286db3-8c3c-4b1b-8bfc-ae7aefb34281">
 
 **UI Flow**
+<img width="551" alt="顧客UI" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/ca6642d5-8215-4635-90a2-af4629c763be">
+
 ​
 ## 開発環境
 - OS：Linux(CentOS)
