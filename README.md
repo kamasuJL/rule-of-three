@@ -22,7 +22,7 @@
 - 目標設定の際にモチベーションを得たい時
 ​
 ## 設計書
-**ER図**
+**ER図**  
 <img width="650" alt="ER図" src="https://github.com/kamasuJL/rule-of-three/assets/156296235/aa286db3-8c3c-4b1b-8bfc-ae7aefb34281">
 
 **UI Flow**  
