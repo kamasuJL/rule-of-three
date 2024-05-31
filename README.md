@@ -36,6 +36,15 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
+## 使用Gem
+
+```
+gem 'devise'
+gem 'enum_help'
+gem 'kaminari','~> 1.2.1'
+gem "rails-i18n"
+```
+
 ## 使用技術
 ​[![](https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white)](https://www.ruby-lang.org/)
 [![](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=flat&logo=ruby-on-rails&logoColor=white)](https://rubyonrails.org/)
